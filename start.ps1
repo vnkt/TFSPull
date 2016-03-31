@@ -25,4 +25,4 @@ Invoke-WebRequest -Uri $tfs_url -OutFile $output
 # Install Quietly
 Start-Process -Wait -FilePath "c:\temp\tfs_server.exe" -ArgumentList "/quiet" -NoNewWindow
 
-.\PsExec.exe -accepteula -h -u "ops" -p "Kelly@16" "C:\Program Files\Microsoft Team Foundation Server 14.0\Tools\tfsconfig.exe" unattend /configure /type:standard
+.\PsExec.exe -accepteula -h -u $Username -p $thePassword "C:\Program Files\Microsoft Team Foundation Server 14.0\Tools\tfsconfig.exe" unattend /configure /type:standard
